@@ -16,8 +16,10 @@
 
     <bean id="logInterceptor" class="com.titizz.simulation.toyspring.aop.LogInterceptor"/>
 
+    <!--//织入-->
     <bean id="autoProxyCreator" class="com.titizz.simulation.toyspring.aop.AspectJAwareAdvisorAutoProxyCreator"/>
 
+    <!--//通知-->
     <bean id="helloServiceAspect" class="com.titizz.simulation.toyspring.aop.AspectJExpressionPointcutAdvisor">
         <property name="advice" ref="logInterceptor"/>
         <property name="expression" value="execution(* com.titizz.simulation.toyspring.HelloService.*(..))"/>

@@ -33,6 +33,7 @@ public class XmlBeanFactory implements BeanFactory {
         loadBeanDefinitions(location);
     }
 
+    @Override
     public Object getBean(String name) throws Exception {
         BeanDefinition beanDefinition = beanDefinitionMap.get(name);
         if (beanDefinition == null) {
@@ -123,6 +124,7 @@ public class XmlBeanFactory implements BeanFactory {
     public List getBeansForType(Class type) throws Exception {
         List beans = new ArrayList<>();
         for (String beanDefinitionName : beanDefinitionNames) {
+            //isAssignableFrom()方法是判断是否为某个类的父类
             if (type.isAssignableFrom(beanDefinitionMap.get(beanDefinitionName).getBeanClass())) {
                 beans.add(getBean(beanDefinitionName));
             }

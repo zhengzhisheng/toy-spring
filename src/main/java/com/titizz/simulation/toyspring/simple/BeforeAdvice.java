@@ -3,6 +3,7 @@ package com.titizz.simulation.toyspring.simple;
 import java.lang.reflect.Method;
 
 /**
+ * 通知点
  * Created by code4wt on 17/8/19.
  */
 public class BeforeAdvice implements Advice {

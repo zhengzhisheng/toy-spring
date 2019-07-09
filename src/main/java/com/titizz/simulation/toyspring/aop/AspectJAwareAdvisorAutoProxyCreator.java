@@ -51,7 +51,7 @@ public class AspectJAwareAdvisorAutoProxyCreator implements BeanPostProcessor, B
             }
         }
 
-        // 2. 匹配失败，返回 bean
+        // 3. 匹配失败，返回 bean
         return bean;
     }
 
