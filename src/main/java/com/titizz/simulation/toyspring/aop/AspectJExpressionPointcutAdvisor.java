@@ -3,6 +3,8 @@ package com.titizz.simulation.toyspring.aop;
 import org.aopalliance.aop.Advice;
 
 /**
+ *
+ * 通知器
  * Created by code4wt on 17/8/16.
  */
 public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor {

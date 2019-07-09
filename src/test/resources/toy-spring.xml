@@ -14,12 +14,13 @@
 
     <bean id="helloService" class="com.titizz.simulation.toyspring.HelloServiceImpl"/>
 
+    <!--通知-->
     <bean id="logInterceptor" class="com.titizz.simulation.toyspring.aop.LogInterceptor"/>
 
     <!--//织入-->
     <bean id="autoProxyCreator" class="com.titizz.simulation.toyspring.aop.AspectJAwareAdvisorAutoProxyCreator"/>
 
-    <!--//通知-->
+    <!--//AspectJExpressionPointcutAdvisor是切面   execution(* com.titizz.simulation.toyspring.HelloService.*(..))是切点-->
     <bean id="helloServiceAspect" class="com.titizz.simulation.toyspring.aop.AspectJExpressionPointcutAdvisor">
         <property name="advice" ref="logInterceptor"/>
         <property name="expression" value="execution(* com.titizz.simulation.toyspring.HelloService.*(..))"/>
